@@ -1,0 +1,2 @@
+# AlmoChat---Gest-o-Inteligente-para-dispositivo-m-vel
+Simplificar e agilizar a gestão de itens de almoxarifado, o “AlmoChat” fornecerá aos usuários uma interface intuitiva de chat baseada em linguagem natural. O sistema permitirá que os usuários possam acessar rapidamente informações do banco de dados, resultando em uma melhor organização do almoxarifado por meio de um processo de gestão mais eficaz.
