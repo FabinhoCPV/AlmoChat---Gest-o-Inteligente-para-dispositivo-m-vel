@@ -1,0 +1,1 @@
+worker: python localizaçao de componetes 5.py
