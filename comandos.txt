@@ -1,60 +1,32 @@
-cd Desktop
-cd univesp
-streamlit run chat.py
+entrar no diretorio:
+	cd C:\Users\gonca\Desktop\univesp4
 
-cd Desktop
-cd univesp
-streamlit run chat_bando_dedos.py
+abrir heroku;
+	heroku login
 
-
-
+ver apps:
+	heroku apps
 
 
-cd Desktop
-cd univesp
-streamlit run chat_controle_de_acesso.py
+acessar apps
+	heroku run bash -a univesp5
 
 
 
-cd Desktop
-cd univesp
-streamlit run chat_mysql.py
+fazer  commit:
+git status
+git add .
+git commit -m "Corrigindo a porta para o Heroku"
+git push heroku master
 
 
-cd Desktop
-cd univesp
-streamlit run chat_mysql2.py
 
 
-SELECT * FROM mysql.db WHERE User = 'root' AND Db = 'Local instance MySQL8';
-SELECT * FROM mysql.db WHERE User = 'goncalves2098@gmail.com' AND Db = 'Local instance MySQL8';
+Force um push se necessário
+	git push heroku main --force
 
-SELECT * FROM mysql.db WHERE User = 'goncalves2098@gmail.com';
-
-
-da permição para o usuario "root"
-SHOW GRANTS FOR 'root'@'localhost';
-GRANT ALL PRIVILEGES ON ` MySQL8`.* TO 'root'@'localhost';
-
-verifica as permiçoes do usuario 
-SELECT * FROM mysql.db WHERE User = 'root';
+Verifique o log do Heroku:
+	heroku logs --tail
 
 
-mostra os bancos 
-SHOW DATABASES;
-
-
-mostra as tabelas 
-USE estoque_componentes;
-SHOW TABLES;
-
-
-local onde esta o banco 
-C:\ProgramData\MySQL\MySQL Server 8.3\Data
-
-descreve o banco
-SHOW COLUMNS FROM componentes;
-
-mostra todos os dados do banco 
-USE estoque_componentes;
-SELECT * FROM componentes;
+https://univesp5-07bbe6836c6a.herokuapp.com/
