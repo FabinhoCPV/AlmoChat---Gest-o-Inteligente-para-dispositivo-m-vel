@@ -14,7 +14,6 @@ acessar apps
 
 
 fazer  commit:
-git status
 git add .
 git commit -m "Corrigindo a porta para o Heroku"
 git push heroku master
@@ -22,11 +21,4 @@ git push heroku master
 
 
 
-Force um push se necessário
-	git push heroku main --force
 
-Verifique o log do Heroku:
-	heroku logs --tail
-
-
-https://univesp5-07bbe6836c6a.herokuapp.com/

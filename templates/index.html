@@ -1,27 +1,97 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gerenciamento de Componentes</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="static/scripts.js"></script>
+    <title>Gestão de Componentes</title>
+    <style>
+        body {
+            background-color: black; /* Fundo preto */
+            color: white; /* Letra branca */
+            font-family: Arial, sans-serif; /* Fonte Arial sem serifa */
+            text-transform: uppercase; /* Texto em letras maiúsculas */
+            font-size: 18px; /* Tamanho da fonte ajustado */
+            padding: 20px;
+        }
+        h1, h2 {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Centralizar horizontalmente */
+            gap: 15px; /* Espaçamento entre os elementos do formulário */
+            margin-bottom: 35px;
+        }
+        input {
+            font-size: 16px;
+            padding: 10px;
+            border-radius: 8px;
+            width: 70%; /* Reduzir a largura para 70% */
+        }
+        button {
+            font-size: 16px;
+            padding: 12px;
+            background-color: #444;
+            color: white;
+            border: 2px solid #777;
+            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            cursor: pointer;
+            font-weight: bold;
+            width: 70%; /* Reduzir a largura para 70% */
+            text-align: center;
+        }
+        button:hover {
+            background-color: #777;
+        }
+        #componentSection, #componenteInfo {
+            padding: 20px;
+        }
+        label {
+            font-weight: bold;
+        }
+        #componentSection {
+            margin-top: 35px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Gerenciamento de Componentes</h1>
-    <div>
-        <h2>Login</h2>
-        <input type="text" id="username" placeholder="Usuário" required>
-        <input type="password" id="password" placeholder="Senha" required>
-        <button id="loginBtn">Entrar</button>
-    </div>
+    <h1>Gestão de Componentes</h1>
     
-    <div id="component-search" style="display:none;">
+    <form id="loginForm">
+        <label for="username">Usuário:</label>
+        <input type="text" id="username" name="username" required>
+        
+        <label for="password">Senha:</label>
+        <input type="password" id="password" name="password" required>
+        
+        <button type="submit">Login</button>
+    </form>
+
+    <div id="componentSection" style="display:none;">
         <h2>Buscar Componente</h2>
-        <input type="text" id="component-name" placeholder="Nome do Componente">
-        <button id="searchBtn">Buscar</button>
-        <div id="search-result" style="display:none;"></div>
+        <form id="searchForm">
+            <label for="componente">Nome do Componente:</label>
+            <input type="text" id="componente" name="componente" required>
+            <button type="submit">Buscar</button>
+        </form>
+
+        <div id="componenteInfo" style="display:none;">
+            <p id="componenteNome"></p>
+            <p id="componenteQuantidade"></p>
+            <p id="componentePosicao"></p> <!-- Novo elemento para a posição -->
+
+            <!-- Adicionar campo de quantidade -->
+            <label for="quantidade">Quantidade:</label>
+            <input type="number" id="quantidade" name="quantidade" min="1" required>
+
+            <!-- Botões para adicionar ou retirar componente -->
+            <button id="adicionarBtn">Adicionar</button>
+            <button id="retirarBtn">Retirar</button>
+        </div>
     </div>
+
+    <script src="{{ url_for('static', filename='scripts.js') }}"></script>
 </body>
 </html>
